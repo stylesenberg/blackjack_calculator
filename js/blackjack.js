@@ -40,6 +40,12 @@ function placeBet(bet) {
   };
 };
 
+function calculateBankroll(amount) {
+  game.bankroll += amount;
+  console.log("New bankroll is: " + game.bankroll);
+  return game.bankroll;
+};
+
 
 /* workflow */
 shuffleNewDeck();

@@ -101,3 +101,28 @@ QUnit.test( "function placeBet()", function( assert ) {
   assert.equal( test2, "Argument == NaN.", "Case: isNaN(arg) works." );
   assert.equal( test3, "Everything is fine.", "Case: argument == number works." );
 });
+
+QUnit.test( "function calculateBankroll()", function( assert ) {
+  var test1 = typeof calculateBankroll;
+
+  var initialValue = game.bankroll; //stores initial value
+  game.bankroll = 0;
+
+  var test2 = calculateBankroll(7);
+  game.bankroll = 0;
+
+  var test3 = calculateBankroll(-137);
+  game.bankroll = 0;
+
+  var test4 = calculateBankroll(0.557);
+  game.bankroll = 0;
+
+  var test5 = calculateBankroll(-2.0);
+  game.bankroll = initialValue; //restores initial value
+
+  assert.equal( test1, "function", "Function placeBet() is defined." );
+  assert.equal( test2, 7, "Function placeBet() is defined." );
+  assert.equal( test3, -137, "Function placeBet() is defined." );
+  assert.equal( test4, 0.557, "Function placeBet() is defined." );
+  assert.equal( test5, -2.0, "Function placeBet() is defined." );
+});
