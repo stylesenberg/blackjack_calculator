@@ -19,7 +19,7 @@ QUnit.test( "css & js", function( assert ) {
   assert.equal( script2, "js/bootstrap.min.js", "bootstrap.min.js is included." );
   assert.equal( script3, "js/chart.min.js", "chart.min.js is included." );
   assert.equal( script4, "js/qunit.js", "qunit.js is included." );
-  assert.equal( script5, "js/custom.js", "custom.js is included." );
+  assert.equal( script5, "js/blackjack.js", "custom.js is included." );
   assert.equal( script6, "js/tests/embed.tests.js", "embed.tests.js is included." );
   assert.equal( script7, "js/tests/blackjack.tests.js", "blackjack.tests.js is included." );
 });
