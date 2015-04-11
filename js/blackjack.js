@@ -46,6 +46,99 @@ function calculateBankroll(amount) {
   return game.bankroll;
 };
 
+function dealInitialCards() {
+  game.playersHand = [];
+  game.dealersHand = [];
+
+  game.playersHand.push(game.deck.pop());
+  game.dealersHand.push(game.deck.pop());
+  game.playersHand.push(game.deck.pop());
+
+  console.log(game.playersHand);
+  console.log(game.dealersHand);
+  console.log("Initial cards were dealt.");
+
+  calculateValue(game.playersHand);
+  /* stopped here */
+  //calcValPlayerOfDealersHand();
+};
+
+function calculateValue(hand) {
+
+  if (hand == game.dealersHand) {
+
+    game.valueOfDealersHand = 0;
+    var val = game.valueOfDealersHand;
+
+    for (var i = 0; i < hand.length; i++) {
+      if (hand[i] == "A") {
+        val += 1;
+      } else {
+        val += hand[i];
+      };
+    };
+
+    // calculate the Ace correctly
+    if ((val < 12) && (game.dealersHand.indexOf("A") != -1)) {
+      val += 10;
+    };
+
+    console.log("Dealer has now: " + val);
+    return val;
+
+  } else {
+
+    game.valueOfPlayersHand = 0;
+    var val = game.valueOfPlayersHand;
+
+    for (var i = 0; i < hand.length; i++) {
+      if (hand[i] == "A") {
+        val += 1;
+      } else {
+        val += hand[i];
+      };
+    };
+
+    // calculate the ace correctly
+    if ((val < 12) && (hand.indexOf("A") != -1)) {
+      val += 10;
+    };
+
+    // announce blackjack
+    if (val == 21 && hand.length < 3) {
+      console.log("----- Player has won! Player shows BLACKJACK.");
+
+      game.betSize *= 2.5;
+      calculateBankroll(game.betSize);
+      //startNewGame();
+      return "blackjack";
+    };
+
+    // announce 21
+    if (val == 21 && hand.length >= 3) {
+      console.log("Player shows: " + val);
+      //beginDealersTurn();
+      return val;
+    };
+
+    // announce "busted"
+    if (val > 21) {
+      console.log("----- Player has lost! Player shows: " + val);
+
+      game.betSize *= -1;
+      calculateBankroll(game.betSize);
+      //startNewGame();
+      return "busted";
+    };
+
+    // announce all other values
+    if (val < 21) {
+      console.log("Player shows: " + val);
+      return val;
+    };
+  };
+};
+
 
 /* workflow */
 shuffleNewDeck();

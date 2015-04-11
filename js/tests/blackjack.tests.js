@@ -30,14 +30,16 @@ QUnit.test( "global variables", function( assert ){
   assert.equal( test9, 0, "Property game.valueOfDealersHand is set to 0.");
 });
 
-QUnit.test( "function shuffle()", function( assert ) {
-	var test1 = typeof shuffle;
+QUnit.test( "function shuffle(arg)", function( assert ) {
+  var test1 = typeof shuffle;
+  var test_b = shuffle.length;
 	var arr1 = [0,1,2,3,4];
 	var arr2 = [0,1,2,3,4];
 	var shuffled_arr = shuffle(arr1);
 
-  assert.equal( test1, "function", "Function shuffle() is defined." );
-  assert.notEqual( arr1, arr2, "Function shuffle() works.");
+  assert.equal( test1, "function", "Function shuffle(arg) is defined." );
+  assert.equal( test_b, 1, "Function shuffle(arg) takes 1 argument." );
+  assert.notEqual( arr1, arr2, "Function shuffle(arg) works.");
 });
 
 QUnit.test( "function shuffleNewDeck()", function( assert ) {
@@ -88,8 +90,9 @@ QUnit.test( "function shuffleNewDeck()", function( assert ) {
   assert.equal( test4(), 96, "Facevalue '10' appears correctly 96 times." );
 });
 
-QUnit.test( "function placeBet()", function( assert ) {
+QUnit.test( "function placeBet(arg)", function( assert ) {
   var test1 = typeof placeBet;
+  var test_b = placeBet.length;
 
   var initialValue = game.betSize; //stores initial value
   console.log("LOGS: " + initialValue);
@@ -97,13 +100,15 @@ QUnit.test( "function placeBet()", function( assert ) {
   var test3 = placeBet(37);
   placeBet(initialValue); //restores initial value
 
-  assert.equal( test1, "function", "Function placeBet() is defined." );
+  assert.equal( test1, "function", "Function placeBet(arg) is defined." );
+  assert.equal( test_b, 1, "Function placeBet(arg) takes 1 argument." );
   assert.equal( test2, "Argument == NaN.", "Case: isNaN(arg) works." );
   assert.equal( test3, "Everything is fine.", "Case: argument == number works." );
 });
 
-QUnit.test( "function calculateBankroll()", function( assert ) {
+QUnit.test( "function calculateBankroll(arg)", function( assert ) {
   var test1 = typeof calculateBankroll;
+  var test_b = calculateBankroll.length;
 
   var initialValue = game.bankroll; //stores initial value
   game.bankroll = 0;
@@ -120,9 +125,89 @@ QUnit.test( "function calculateBankroll()", function( assert ) {
   var test5 = calculateBankroll(-2.0);
   game.bankroll = initialValue; //restores initial value
 
-  assert.equal( test1, "function", "Function placeBet() is defined." );
-  assert.equal( test2, 7, "Function placeBet() is defined." );
-  assert.equal( test3, -137, "Function placeBet() is defined." );
-  assert.equal( test4, 0.557, "Function placeBet() is defined." );
-  assert.equal( test5, -2.0, "Function placeBet() is defined." );
+  assert.equal( test1, "function", "Function calculateBankroll(arg) is defined." );
+  assert.equal( test_b, 1, "Function calculateBankroll(arg) takes 1 argument." );
+  assert.equal( test2, 7, "Function calculateBankroll(arg) works correctly." );
+  assert.equal( test3, -137, "Function calculateBankroll(arg) works correctly." );
+  assert.equal( test4, 0.557, "Function calculateBankroll(arg) works correctly." );
+  assert.equal( test5, -2.0, "Function calculateBankroll(arg) works correctly." );
 });
+
+QUnit.test( "function dealInitialCards()", function( assert ) {
+  var test1 = typeof dealInitialCards;
+
+  assert.equal( test1, "function", "Function dealInitialCards() is defined." );
+});
+
+QUnit.test( "function calculateValue(arg)", function( assert ) {
+  var test_a = typeof calculateValue;
+  var test_b = calculateValue.length;
+
+  var arr1 = [2];
+  var test1 = calculateValue(arr1);
+
+  var arr2 = [10];
+  var test2 = calculateValue(arr2);
+
+  var arr3 = ["A"];
+  var test3 = calculateValue(arr3);
+
+  var arr4 = [10,"A"];
+  var test4 = calculateValue(arr4);
+  game.betSize = 10;
+  game.bankroll = 100;
+
+  var arr5 = [10,"A", 3, "A", 3, "A", 2];
+  var test5 = calculateValue(arr5);
+  game.betSize = 10;
+  game.bankroll = 100;
+
+  var arr6 = [10,2,10];
+  var test6 = calculateValue(arr6);
+  game.betSize = 10;
+  game.bankroll = 100;
+
+  var arr7 = [4,2,3,4,"A","A",2,3,2];
+  var test7 = calculateValue(arr7);
+  game.betSize = 10;
+  game.bankroll = 100;
+
+  var arr8 = [6,6,6,2,2];
+  var test8 = calculateValue(arr8);
+  game.betSize = 10;
+  game.bankroll = 100;
+
+  game.dealersHand = [10];
+  var arr9 = game.dealersHand;
+  var test9 = calculateValue(arr9);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.dealersHand = [];
+
+
+  assert.equal( test_a, "function", "Function calculateValue() is defined." );
+  assert.equal( test_b, 1, "Function calculateValue() takes 1 argument." );
+  assert.equal( test1, 2, "Function calculateValue() counts [2] correctly." );
+  assert.equal( test2, 10, "Function calculateValue() counts [10] correctly." );
+  assert.equal( test3, 11, "Function calculateValue() counts ['A'] correctly." );
+  assert.equal( test4, "blackjack", "Function calculateValue() counts [10,'A'] correctly." );
+  assert.equal( test5, 21, "Function calculateValue() counts [10,'A', 3, 'A', 3, 'A', 2] correctly." );
+  assert.equal( test6, "busted", "Function calculateValue() counts [10,2,10] correctly." );
+  assert.equal( test7, "busted", "Function calculateValue() counts [4,2,3,4,'A','A',2,3,2] correctly." );
+  assert.equal( test8, "busted", "Function calculateValue() counts [6,6,6,2,2] correctly." );
+  assert.equal( test9, 10, "Function calculateValue() counts dealersHand correctly." );
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
