@@ -9,10 +9,20 @@
   </head>
 
   <body>
-    <h1>H1 of website</h1>
-    <p>just a little paragraph</p>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>New.js</h1>
+            <p>click buttons for action</p>
+            <button type="button" class="btn btn-default">Action</button>
+            <button type="button" class="btn btn-primary">Action</button>
+            <button type="button" class="btn btn-success">Action</button>
+            <button type="button" class="btn btn-info">Action</button>
+            <button type="button" class="btn btn-warning">Action</button>
+            <button type="button" class="btn btn-danger">Action</button>
+        </div>
+    </div>
 
-    <!-- Qunit Tests -->
+    <!-- HTML for Qunit Tests -->
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
 
@@ -22,6 +32,8 @@
     <script src="js/chart.min.js"></script>
     <script src="js/qunit.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/tests.js"></script>
+
+    <!-- Tests -->
+    <script src="js/tests/embed.tests.js"></script>
   </body>
 </html>
