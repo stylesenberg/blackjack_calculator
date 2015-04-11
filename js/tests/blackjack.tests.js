@@ -87,3 +87,17 @@ QUnit.test( "function shuffleNewDeck()", function( assert ) {
   assert.equal( test3(), 24, "Facevalue 'A' appears correctly 24 times." );
   assert.equal( test4(), 96, "Facevalue '10' appears correctly 96 times." );
 });
+
+QUnit.test( "function placeBet()", function( assert ) {
+  var test1 = typeof placeBet;
+
+  var initialValue = game.betSize; //stores initial value
+  console.log("LOGS: " + initialValue);
+  var test2 = placeBet("string");
+  var test3 = placeBet(37);
+  placeBet(initialValue); //restores initial value
+
+  assert.equal( test1, "function", "Function placeBet() is defined." );
+  assert.equal( test2, "Argument == NaN.", "Case: isNaN(arg) works." );
+  assert.equal( test3, "Everything is fine.", "Case: argument == number works." );
+});

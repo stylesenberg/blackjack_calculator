@@ -28,5 +28,18 @@ function shuffleNewDeck() {
   console.log("A new deck of cards has been shuffled.");
 };
 
+function placeBet(bet) {
+  game.betSize = bet;
+
+  if (isNaN(game.betSize)) {
+    console.log("*--- Argument is NaN.");
+    return "Argument == NaN.";
+  } else {
+    console.log("*--- Bet is placed. Betsize is: " + game.betSize);
+    return "Everything is fine.";
+  };
+};
+
+
 /* workflow */
 shuffleNewDeck();
