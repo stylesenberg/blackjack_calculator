@@ -245,15 +245,51 @@ QUnit.test( "function hit(arg)", function( assert ) {
   game.playersHand = [];
   game.deck = initialValue; //restores initial deck
 
-  assert.equal( test_a, "function", "Function hit() is defined." );
-  assert.equal( test_b, 1, "Function hit() takes 1 argument." );
-  assert.equal( test1, "dealersHand was destinguished successfully.", "Function hit() works correctly on dealersHand." );
-  assert.equal( test2, "playersHand was destinguished successfully.", "Function hit() works correctly on playersHand." );
+  assert.equal( test_a, "function", "Function hit(arg) is defined." );
+  assert.equal( test_b, 1, "Function hit(arg) takes 1 argument." );
+  assert.equal( test1, "dealersHand was destinguished successfully.", "Function hit(arg) works correctly on dealersHand." );
+  assert.equal( test2, "playersHand was destinguished successfully.", "Function hit(arg) works correctly on playersHand." );
 });
 
+QUnit.test( "function double(arg)", function( assert ) {
+  var test_a = typeof double;
+  var test_b = double.length;
 
+  game.dealersHand = [10];
+  var arr1 = game.dealersHand;
+  var test1 = double(arr1);
+  game.dealersHand = [];
 
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [9];
+  game.playersHand = [6,6];
+  var arr2 = game.playersHand;
+  var test2 = double(arr2);
+  game.playersHand = [];
+  game.deck = initialValue; //restores initial deck
 
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [9];
+  game.playersHand = [6,5,10];
+  var arr3 = game.playersHand;
+  var test3 = double(arr3);
+  game.playersHand = [];
+  game.deck = initialValue; //restores initial deck
+
+  assert.equal( test_a, "function", "Function double(arg) is defined." );
+  assert.equal( test_b, 1, "Function double(arg) takes 1 argument." );
+  assert.equal( test1, "dealersHand can't double.", "dealersHand can not double." );
+  assert.equal( test2, "playersHand was doubled successfully.", "playersHand can double with [6,6]." );
+  assert.equal( test3, "playersHand has more than 2 cards and can not double.", "playersHand can not double with more than 2 cards." );
+});
+
+QUnit.test( "function dealersTurn()", function( assert ) {
+  var test_a = typeof dealersTurn;
+  var test_b = dealersTurn.length;
+
+  assert.equal( test_a, "function", "Function dealersTurn(arg) is defined." );
+  assert.equal( test_b, 0, "Function dealersTurn(arg) takes 1 argument." );
+});
 
 
 

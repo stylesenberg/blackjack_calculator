@@ -152,7 +152,7 @@ function hit (hand) {
 
     if (game.valueOfPlayersHand == 21) {
       console.log("Player has already enough. ;-)");
-      return
+      return "playersHand is already 21.";
 
     } else {
       var the_new_card = game.deck.pop();
@@ -163,6 +163,46 @@ function hit (hand) {
 
     return "playersHand was destinguished successfully.";
   };
+};
+
+function double (hand) {
+  if (hand == game.dealersHand) {
+    return "dealersHand can't double.";
+
+  } else {
+    if (game.playersHand.length < 3) {
+      game.betSize *= 2;
+      var the_new_card = game.deck.pop();
+      game.playersHand.push(the_new_card);
+      console.log("Player was dealt a " + the_new_card + " .");
+      calculateValue(game.playersHand);
+      console.log("Player must stand now.");
+
+      //beginDealersTurn();
+
+      return "playersHand was doubled successfully.";
+    } else{
+      return "playersHand has more than 2 cards and can not double.";
+    };
+  };
+};
+
+function dealersTurn() {
+  console.log("Dealer's turn starts ... ");
+  console.log("Dealer currently stands at " + game.valueOfDealersHand);
+
+  do {
+    var the_new_card = deck.pop();
+
+    game.dealersHand.push(the_new_card);
+
+    console.log("Dealer was dealt a " + the_new_card);
+
+    calculateValue(game.dealersHand);
+  }
+  while (game.valueOfDealersHand < 17);
+
+  //compareBothHands();
 };
 
 /* workflow */
