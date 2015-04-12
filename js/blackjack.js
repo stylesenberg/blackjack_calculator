@@ -59,8 +59,7 @@ function dealInitialCards() {
   console.log("Initial cards were dealt.");
 
   calculateValue(game.playersHand);
-  /* stopped here */
-  //calcValPlayerOfDealersHand();
+  calculateValue(game.dealersHand);
 };
 
 function calculateValue(hand) {
@@ -68,44 +67,42 @@ function calculateValue(hand) {
   if (hand == game.dealersHand) {
 
     game.valueOfDealersHand = 0;
-    var val = game.valueOfDealersHand;
 
     for (var i = 0; i < hand.length; i++) {
       if (hand[i] == "A") {
-        val += 1;
+        game.valueOfDealersHand += 1;
       } else {
-        val += hand[i];
+        game.valueOfDealersHand += hand[i];
       };
     };
 
     // calculate the Ace correctly
-    if ((val < 12) && (game.dealersHand.indexOf("A") != -1)) {
-      val += 10;
+    if ((game.valueOfDealersHand < 12) && (game.dealersHand.indexOf("A") != -1)) {
+      game.valueOfDealersHand += 10;
     };
 
-    console.log("Dealer has now: " + val);
-    return val;
+    console.log("Dealer has now: " + game.valueOfDealersHand);
+    return game.valueOfDealersHand;
 
   } else {
 
     game.valueOfPlayersHand = 0;
-    var val = game.valueOfPlayersHand;
 
     for (var i = 0; i < hand.length; i++) {
       if (hand[i] == "A") {
-        val += 1;
+        game.valueOfPlayersHand += 1;
       } else {
-        val += hand[i];
+        game.valueOfPlayersHand += hand[i];
       };
     };
 
     // calculate the ace correctly
-    if ((val < 12) && (hand.indexOf("A") != -1)) {
-      val += 10;
+    if ((game.valueOfPlayersHand < 12) && (hand.indexOf("A") != -1)) {
+      game.valueOfPlayersHand += 10;
     };
 
     // announce blackjack
-    if (val == 21 && hand.length < 3) {
+    if (game.valueOfPlayersHand == 21 && hand.length < 3) {
       console.log("----- Player has won! Player shows BLACKJACK.");
 
       game.betSize *= 2.5;
@@ -115,15 +112,16 @@ function calculateValue(hand) {
     };
 
     // announce 21
-    if (val == 21 && hand.length >= 3) {
-      console.log("Player shows: " + val);
-      //beginDealersTurn();
-      return val;
+    if (game.valueOfPlayersHand == 21 && hand.length >= 3) {
+      console.log("Player shows: " + game.valueOfPlayersHand);
+
+      return game.valueOfPlayersHand;
+      dealersTurn();
     };
 
     // announce "busted"
-    if (val > 21) {
-      console.log("----- Player has lost! Player shows: " + val);
+    if (game.valueOfPlayersHand > 21) {
+      console.log("----- Player has lost! Player shows: " + game.valueOfPlayersHand);
 
       game.betSize *= -1;
       calculateBankroll(game.betSize);
@@ -131,10 +129,10 @@ function calculateValue(hand) {
       return "busted";
     };
 
-    // announce all other values
-    if (val < 21) {
-      console.log("Player shows: " + val);
-      return val;
+    // announce all other game.valueOfPlayersHandues
+    if (game.valueOfPlayersHand < 21) {
+      console.log("Player shows: " + game.valueOfPlayersHand);
+      return game.valueOfPlayersHand;
     };
   };
 };
@@ -178,7 +176,7 @@ function double (hand) {
       calculateValue(game.playersHand);
       console.log("Player must stand now.");
 
-      //beginDealersTurn();
+      dealersTurn();
 
       return "playersHand was doubled successfully.";
     } else{
@@ -192,7 +190,7 @@ function dealersTurn() {
   console.log("Dealer currently stands at " + game.valueOfDealersHand);
 
   do {
-    var the_new_card = deck.pop();
+    var the_new_card = game.deck.pop();
 
     game.dealersHand.push(the_new_card);
 
@@ -202,7 +200,7 @@ function dealersTurn() {
   }
   while (game.valueOfDealersHand < 17);
 
-  //compareHands();
+  compareHands();
 };
 
 function compareHands () {
@@ -246,5 +244,64 @@ function compareHands () {
   };
 };
 
+function checkDeckSize() {
+  if (game.deck.length == 0) {
+    console.log("game init");
+  };
+
+  if (game.deck.length == 0 || game.deck.length < 20) {
+
+    shuffleNewDeck();
+    console.log("Number of cards in the current deck: " + game.deck.length);
+    return "new deck shuffled"
+
+  } else {
+    console.log("Number of cards in the current deck: " + game.deck.length);
+    return "deck is still dealable"
+  };
+};
+
+function startNewGame () {
+  checkDeckSize();
+  placeBet(10);
+  dealInitialCards();
+  //gameLogic();
+}
+
+function gameLogic () {
+  // body...
+}
+
+function settings () {
+  // body...
+}
+
 /* workflow */
 shuffleNewDeck();
+
+
+
+
+
+$(".jumbotron .btn-primary").click(function () {
+    startNewGame();
+});
+
+$(".jumbotron .btn-success").click(function () {
+    dealersTurn();
+});
+
+$(".jumbotron .btn-warning").click(function () {
+    hit(game.playersHand);
+});
+
+$(".jumbotron .btn-danger").click(function () {
+    double(game.playersHand);
+});
+
+
+
+
+
+
+

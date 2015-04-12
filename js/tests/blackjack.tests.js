@@ -339,7 +339,55 @@ QUnit.test( "function compareHands()", function( assert ) {
   assert.equal( test4, "dealer busts", "Dealer busts correctly." );
 });
 
+QUnit.test( "function checkDeckSize()", function( assert ) {
+  var test_a = typeof checkDeckSize;
+  var test_b = checkDeckSize.length;
 
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [1,2,3,4];
+  var test1 = checkDeckSize();
+  game.deck = initialValue; //restores initial deck
+
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5];
+  var test2 = checkDeckSize();
+  game.deck = initialValue; //restores initial deck
+
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1];
+  var test3 = checkDeckSize();
+  game.deck = initialValue; //restores initial deck
+
+  assert.equal( test_a, "function", "Function checkDeckSize() is defined." );
+  assert.equal( test_b, 0, "Function checkDeckSize() takes 1 argument." );
+  assert.equal( test1, "new deck shuffled", "New deck shuffled when under 20 cards." );
+  assert.equal( test2, "deck is still dealable", "New deck is dealable with more than 20 cards." );
+  assert.equal( test3, "deck is still dealable", "New deck is dealable with more than 20 cards." );
+});
+
+QUnit.test( "function startNewGame()", function( assert ) {
+  var test_a = typeof startNewGame;
+  var test_b = startNewGame.length;
+
+  assert.equal( test_a, "function", "Function startNewGame() is defined." );
+  assert.equal( test_b, 0, "Function startNewGame() takes 1 argument." );
+});
+
+QUnit.test( "function gameLogic()", function( assert ) {
+  var test_a = typeof gameLogic;
+  var test_b = gameLogic.length;
+
+  assert.equal( test_a, "function", "Function gameLogic() is defined." );
+  assert.equal( test_b, 0, "Function gameLogic() takes 1 argument." );
+});
+
+QUnit.test( "function settings()", function( assert ) {
+  var test_a = typeof settings;
+  var test_b = settings.length;
+
+  assert.equal( test_a, "function", "Function settings() is defined." );
+  assert.equal( test_b, 0, "Function settings() takes 1 argument." );
+});
 
 
 
