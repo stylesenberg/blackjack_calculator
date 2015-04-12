@@ -202,7 +202,48 @@ function dealersTurn() {
   }
   while (game.valueOfDealersHand < 17);
 
-  //compareBothHands();
+  //compareHands();
+};
+
+function compareHands () {
+
+  // player has more
+  if (game.valueOfDealersHand < game.valueOfPlayersHand) {
+    console.log("*--- player wins");
+
+    calculateBankroll(game.betSize);
+    //startNewGame();
+    return "player wins"
+  };
+
+  // dealer has more
+  if (game.valueOfPlayersHand < game.valueOfDealersHand && game.valueOfDealersHand <= 21) {
+    console.log("*--- Player has lost.");
+
+    game.betSize *= -1;
+    calculateBankroll(game.betSize);
+    //startNewGame();
+    return "dealer wins"
+  };
+
+  // draw
+  if (game.valueOfPlayersHand == game.valueOfDealersHand) {
+    console.log("*--- Draw. Player has " + game.valueOfPlayersHand + " and Dealer has " + game.valueOfDealersHand + " as well.")
+
+    game.betSize = 0;
+    calculateBankroll(game.betSize);
+    //startNewGame();
+    return "draw"
+  };
+
+  // dealer busts
+  if (game.valueOfDealersHand > 21) {
+    console.log("*--- Dealer busted. Player wins!")
+
+    calculateBankroll(game.betSize);
+    //startNewGame();
+    return "dealer busts"
+  };
 };
 
 /* workflow */

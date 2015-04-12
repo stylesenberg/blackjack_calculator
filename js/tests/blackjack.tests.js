@@ -287,8 +287,56 @@ QUnit.test( "function dealersTurn()", function( assert ) {
   var test_a = typeof dealersTurn;
   var test_b = dealersTurn.length;
 
-  assert.equal( test_a, "function", "Function dealersTurn(arg) is defined." );
-  assert.equal( test_b, 0, "Function dealersTurn(arg) takes 1 argument." );
+  assert.equal( test_a, "function", "Function dealersTurn() is defined." );
+  assert.equal( test_b, 0, "Function dealersTurn() takes 1 argument." );
+});
+
+QUnit.test( "function compareHands()", function( assert ) {
+  var test_a = typeof compareHands;
+  var test_b = compareHands.length;
+
+  // player has more
+  game.valueOfPlayersHand = 17;
+  game.valueOfDealersHand = 16;
+  var test1 = compareHands();
+  game.bankroll = 100;
+  game.betSize = 10;
+  game.valueOfPlayersHand = 0;
+  game.valueOfDealersHand = 0;
+
+  // dealer has more
+  game.valueOfPlayersHand = 20;
+  game.valueOfDealersHand = 21;
+  var test2 = compareHands();
+  game.bankroll = 100;
+  game.betSize = 10;
+  game.valueOfPlayersHand = 0;
+  game.valueOfDealersHand = 0;
+
+  // draw
+  game.valueOfPlayersHand = 21;
+  game.valueOfDealersHand = 21;
+  var test3 = compareHands();
+  game.bankroll = 100;
+  game.betSize = 10;
+  game.valueOfPlayersHand = 0;
+  game.valueOfDealersHand = 0;
+
+  // dealer busts
+  game.valueOfPlayersHand = 14;
+  game.valueOfDealersHand = 22;
+  var test4 = compareHands();
+  game.bankroll = 100;
+  game.betSize = 10;
+  game.valueOfPlayersHand = 0;
+  game.valueOfDealersHand = 0;
+
+  assert.equal( test_a, "function", "Function compareHands(arg) is defined." );
+  assert.equal( test_b, 0, "Function compareHands(arg) takes 1 argument." );
+  assert.equal( test1, "player wins", "Player wins correctly." );
+  assert.equal( test2, "dealer wins", "Dealer wins correctly." );
+  assert.equal( test3, "draw", "Draw stands correctly." );
+  assert.equal( test4, "dealer busts", "Dealer busts correctly." );
 });
 
 
