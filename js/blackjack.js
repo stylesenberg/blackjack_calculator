@@ -139,6 +139,31 @@ function calculateValue(hand) {
   };
 };
 
+function hit (hand) {
+  if (hand == game.dealersHand) {
+
+    var the_new_card = game.deck.pop();
+    game.dealersHand.push(the_new_card);
+    console.log("Dealer was dealt a " + the_new_card);
+    calculateValue(game.dealersHand);
+    return "dealersHand was destinguished successfully.";
+
+  } else {
+
+    if (game.valueOfPlayersHand == 21) {
+      console.log("Player has already enough. ;-)");
+      return
+
+    } else {
+      var the_new_card = game.deck.pop();
+      game.playersHand.push(the_new_card);
+      console.log("Player was dealt a " + the_new_card);
+      calculateValue(game.playersHand);
+    };
+
+    return "playersHand was destinguished successfully.";
+  };
+};
 
 /* workflow */
 shuffleNewDeck();

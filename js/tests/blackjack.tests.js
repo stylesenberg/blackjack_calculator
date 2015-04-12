@@ -184,6 +184,26 @@ QUnit.test( "function calculateValue(arg)", function( assert ) {
   game.bankroll = 100;
   game.dealersHand = [];
 
+  game.dealersHand = ["A",10];
+  var arr10 = game.dealersHand;
+  var test10 = calculateValue(arr10);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.dealersHand = [];
+
+  game.dealersHand = [2,4,3,3,10];
+  var arr11 = game.dealersHand;
+  var test11 = calculateValue(arr11);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.dealersHand = [];
+
+  game.dealersHand = ["A","A","A","A","A","A",2,"A","A",10];
+  var arr12 = game.dealersHand;
+  var test12 = calculateValue(arr12);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.dealersHand = [];
 
   assert.equal( test_a, "function", "Function calculateValue() is defined." );
   assert.equal( test_b, 1, "Function calculateValue() takes 1 argument." );
@@ -196,10 +216,40 @@ QUnit.test( "function calculateValue(arg)", function( assert ) {
   assert.equal( test7, "busted", "Function calculateValue() counts [4,2,3,4,'A','A',2,3,2] correctly." );
   assert.equal( test8, "busted", "Function calculateValue() counts [6,6,6,2,2] correctly." );
   assert.equal( test9, 10, "Function calculateValue() counts dealersHand correctly." );
+  assert.equal( test10, 21, "Function calculateValue() counts dealersHand correctly." );
+  assert.equal( test11, 22, "Function calculateValue() counts dealersHand correctly." );
+  assert.equal( test12, 20, "Function calculateValue() counts dealersHand correctly." );
 });
 
+QUnit.test( "function hit(arg)", function( assert ) {
+  var test_a = typeof hit;
+  var test_b = hit.length;
 
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [9];
+  game.dealersHand = [2,10];
+  var arr1 = game.dealersHand;
+  var test1 = hit(arr1);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.dealersHand = [];
+  game.deck = initialValue; //restores initial deck
 
+  var initialValue = game.deck; //stores initial deck
+  game.deck = [9];
+  game.playersHand = [2,10];
+  var arr2 = game.playersHand;
+  var test2 = hit(arr2);
+  game.betSize = 10;
+  game.bankroll = 100;
+  game.playersHand = [];
+  game.deck = initialValue; //restores initial deck
+
+  assert.equal( test_a, "function", "Function hit() is defined." );
+  assert.equal( test_b, 1, "Function hit() takes 1 argument." );
+  assert.equal( test1, "dealersHand was destinguished successfully.", "Function hit() works correctly on dealersHand." );
+  assert.equal( test2, "playersHand was destinguished successfully.", "Function hit() works correctly on playersHand." );
+});
 
 
 
