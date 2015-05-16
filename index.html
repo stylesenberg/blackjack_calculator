@@ -4,33 +4,254 @@
     <meta charset="UTF-8">
     <title>github/blackjack_calculator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/glyphicons.css">
     <link rel="stylesheet" href="css/qunit.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
 
   <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Blackjack.js</h1>
-            <p>click buttons for action</p>
-            <button type="button" class="btn btn-default">Action</button>
-            <button type="button" class="btn btn-primary">New Game</button>
-            <button type="button" class="btn btn-success">Stand</button>
-            <button type="button" class="btn btn-info">Split</button>
-            <button type="button" class="btn btn-warning">Hit</button>
-            <button type="button" class="btn btn-danger">Double</button>
+      <header>
+        <h1>Blackjack Odds Calculator</h1>
+      </header>
+
+      <div class="page-header">
+        <h1>Environment <small>Please customize it.</small></h1>
+    
+        <h3>Number of decks:</h3>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <span id="info-icon-1" class="glyphicons glyphicons-circle-info"></span>
+        <div id="info-box-1" class="alert alert-info" role="alert">The dealing box will consist of the number of decks.</div>
+        </br>
+        
+        <h3>Position of cut-card:</h3>
+        <select>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+
+        <span id="info-icon-2" class="glyphicons glyphicons-circle-info"></span>
+        <div id="info-box-2" class="alert alert-info" role="alert">The cut-card indicates when the dealing box reaches its end. If the cut card appears, all current hands will be played until they are completed. Then the entire dealing box will be shuffled completely new. To simulate a real environment, the cut card has to be within the 10th last card and the 30th last card of the dealing box.</div>
+      </div>
+
+      <div class="page-header">
+        <h1>Strategy <small>Please customize it.</small></h1>
+
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            <p class="player">Player</p>
+            <p class="dealer">Dealer's Card</p>
+          </div>
+
+          <!-- Table -->
+          <table id="hard" class="table">
+            <thead>
+              <tr>
+                <th class="initial">Hard</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>T</th>
+                <th>A</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="initial">5</th>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_5" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_6" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_7" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_8" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_9" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_T" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button id="hard_5_A" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">H | Hit</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">S | Stand</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">D | Double</a></li>
+                      <li><a href="" onclick="frontend.changeBtnText(); return false">P | Split</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="initial">6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th class="initial">7</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      <div class="page-header">
+        <h1>Computation <small>Please customize it.</small></h1>
+        <h3>Number of simulations:</h3>
+        <select>
+            <option value="1000">1.000</option>
+            <option value="10000">10.000</option>
+            <option value="100000">100.000</option>
+        </select>
+      </div>
+
+      <button id="start-simulation" type="button" class="btn btn-lg btn-primary">start simulation</button>
     </div>
 
-    <!-- HTML for Qunit Tests -->
+    <!-- HTML for Qunit Tests 
     <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
+    <div id="qunit-fixture"></div>-->
 
     <!-- JavaScripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/qunit.js"></script>
+    <script src="js/custom.js"></script>
     <script src="js/blackjack.js"></script>
 
     <!-- Tests -->
