@@ -1,3 +1,13 @@
+// start simulation
+$("#start-simulation").click(function(){
+
+  assignNumberOfDecks();
+  assignPositionOfCutcard();
+  assignSimulationCount();
+
+  simulateTheGame();
+});
+
 // global variables
 
 var general = {};

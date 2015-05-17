@@ -275,31 +275,17 @@ function startNewGame () {
   //gameLogic();
 }
 
-function gameLogic () {
-  // body...
-}
-
-function settings () {
-  // body...
-}
-
 function simulateTheGame () {
+
   for (var i = 0; i < simulation.count; i++) {
-    console.log(i);
+
+    console.log("--- simulation # " + i);
+    
+    checkDeckSize();
+    placeBet(10);
+
   };
 }
-
-
-// start simulation
-$("#start-simulation").click(function(){
-
-  assignNumberOfDecks();
-  assignPositionOfCutcard();
-  assignSimulationCount();
-
-  simulateTheGame();
-});
-
 
 
 
