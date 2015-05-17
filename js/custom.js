@@ -7,16 +7,29 @@ general.positionOfCutCard = null;
 // start simulation
 $("#start-simulation").click(function(){
 
+	assignNumberOfDecks();
+	assignPositionOfCutcard();
+});
+
+function assignNumberOfDecks () {
 	var nod = $("#number-of-decks option:selected");
+
 	if (nod != null) {
-		general.numberOfDecks = $("#number-of-decks option:selected").val();
+		general.numberOfDecks = Number(nod.val());
 	} else {
 		alert("Please select the number of decks in the dealing box.");
 	}
+};
 
+function assignPositionOfCutcard () {
+	var poc = $("#position-of-cutcard option:selected");
 
-	general.positionOfCutCard = $("#position-of-cutcard option:selected").val();
-});
+	if (poc != null) {
+		general.positionOfCutCard = Number(poc.val());
+	} else {
+		alert("Please select the position of the cutcard in the dealing box.");
+	};
+};
 
 // info boxes show & hide
 
