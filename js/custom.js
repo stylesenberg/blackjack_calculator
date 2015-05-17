@@ -7,6 +7,7 @@ general.positionOfCutcard = null;
 var simulation = {};
 simulation.count = null;
 
+
 function assignNumberOfDecks () {
 	var nod = $("#number-of-decks option:selected");
 
