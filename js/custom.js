@@ -1,3 +1,25 @@
+// global variables
+
+var general = {};
+general.numberOfDecks = null;
+general.positionOfCutCard = null;
+
+// start simulation
+$("#start-simulation").click(function(){
+
+	var nod = $("#number-of-decks option:selected");
+	if (nod != null) {
+		general.numberOfDecks = $("#number-of-decks option:selected").val();
+	} else {
+		alert("Please select the number of decks in the dealing box.");
+	}
+
+
+	general.positionOfCutCard = $("#position-of-cutcard option:selected").val();
+});
+
+// info boxes show & hide
+
 $("#info-icon-1").mouseenter(function(){
 	$("#info-box-1").css("display", "inline");
 });
@@ -13,6 +35,9 @@ $("#info-icon-2").mouseenter(function(){
 $("#info-icon-2").mouseleave(function(){
 	$("#info-box-2").css("display", "none");
 });
+
+
+// frontend methods
 
 var frontend = {
 	changeBtnText: function(){

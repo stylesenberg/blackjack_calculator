@@ -49,6 +49,7 @@ header h1 {
 
 #start-simulation {
 	float: right;
+	margin-bottom: 60px;
 }
 
 .panel-heading p.player {
