@@ -1,3 +1,4 @@
+/*
 QUnit.test( "global variables", function( assert ){
   var test1 = typeof game;
 
@@ -388,8 +389,4 @@ QUnit.test( "function settings()", function( assert ) {
   assert.equal( test_a, "function", "Function settings() is defined." );
   assert.equal( test_b, 0, "Function settings() takes 1 argument." );
 });
-
-
-
-
-
+*/

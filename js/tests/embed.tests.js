@@ -1,3 +1,4 @@
+/*
 QUnit.test( "css & js", function( assert ) {
 	var link1 = $("head link:eq(0)").attr("href");
 	var link2 = $("head link:eq(1)").attr("href");
@@ -23,3 +24,4 @@ QUnit.test( "css & js", function( assert ) {
   assert.equal( script6, "js/tests/embed.tests.js", "embed.tests.js is included." );
   assert.equal( script7, "js/tests/blackjack.tests.js", "blackjack.tests.js is included." );
 });
+*/

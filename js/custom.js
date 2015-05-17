@@ -2,14 +2,10 @@
 
 var general = {};
 general.numberOfDecks = null;
-general.positionOfCutCard = null;
+general.positionOfCutcard = null;
 
-// start simulation
-$("#start-simulation").click(function(){
-
-	assignNumberOfDecks();
-	assignPositionOfCutcard();
-});
+var simulation = {};
+simulation.count = null;
 
 function assignNumberOfDecks () {
 	var nod = $("#number-of-decks option:selected");
@@ -25,9 +21,19 @@ function assignPositionOfCutcard () {
 	var poc = $("#position-of-cutcard option:selected");
 
 	if (poc != null) {
-		general.positionOfCutCard = Number(poc.val());
+		general.positionOfCutcard = Number(poc.val());
 	} else {
 		alert("Please select the position of the cutcard in the dealing box.");
+	};
+};
+
+function assignSimulationCount () {
+	var sic = $("#simulation-count option:selected");
+
+	if (sic != null) {
+		simulation.count = Number(sic.val());
+	} else {
+		alert("Please select the total number of simulations.");
 	};
 };
 

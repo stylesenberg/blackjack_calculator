@@ -17,15 +17,18 @@ function shuffle(o) {
 function shuffleNewDeck() {
   game.deck = [];
 
-  for (var deck = 0; deck < 6; deck++) {
-    for (var suit = 0; suit < 4; suit++) {
-      game.deck.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, "A");
+  if (general.numberOfDecks != null) {
+    for (var deck = 0; deck < general.numberOfDecks; deck++) {
+      for (var suit = 0; suit < 4; suit++) {
+        game.deck.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, "A");
+      };
     };
-  };
 
-  shuffle(game.deck);
-  
-  console.log("A new deck of cards has been shuffled.");
+    shuffle(game.deck);
+    console.log("A new deck of cards has been shuffled.");
+  } else {
+    console.log("ERROR: general.numberOfDecks == null")
+  };
 };
 
 function placeBet(bet) {
@@ -249,15 +252,19 @@ function checkDeckSize() {
     console.log("game init");
   };
 
-  if (game.deck.length == 0 || game.deck.length < 20) {
+  if(general.positionOfCutcard != null){
+    if (game.deck.length == 0 || game.deck.length < 20) {
 
-    shuffleNewDeck();
-    console.log("Number of cards in the current deck: " + game.deck.length);
-    return "new deck shuffled"
+      shuffleNewDeck();
+      console.log("Number of cards in the current deck: " + game.deck.length);
+      return "new deck shuffled"
 
+    } else {
+      console.log("Number of cards in the current deck: " + game.deck.length);
+      return "deck is still dealable"
+  };
   } else {
-    console.log("Number of cards in the current deck: " + game.deck.length);
-    return "deck is still dealable"
+    console.log("ERROR general.positionOfCutcard == null")
   };
 };
 
@@ -276,28 +283,23 @@ function settings () {
   // body...
 }
 
-/* workflow */
-shuffleNewDeck();
+function simulateTheGame () {
+  for (var i = 0; i < simulation.count; i++) {
+    console.log(i);
+  };
+}
 
 
+// start simulation
+$("#start-simulation").click(function(){
 
+  assignNumberOfDecks();
+  assignPositionOfCutcard();
+  assignSimulationCount();
 
-
-$(".jumbotron .btn-primary").click(function () {
-    startNewGame();
+  simulateTheGame();
 });
 
-$(".jumbotron .btn-success").click(function () {
-    dealersTurn();
-});
-
-$(".jumbotron .btn-warning").click(function () {
-    hit(game.playersHand);
-});
-
-$(".jumbotron .btn-danger").click(function () {
-    double(game.playersHand);
-});
 
 
 
