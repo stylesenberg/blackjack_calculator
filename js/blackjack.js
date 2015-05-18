@@ -287,7 +287,11 @@ function simulateTheGame () {
   };
 }
 
-
+/*
+* next step: 
+* create logic of playAccordingToStrategy();
+*
+*/
 
 
 
