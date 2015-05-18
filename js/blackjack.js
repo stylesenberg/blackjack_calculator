@@ -3,8 +3,8 @@ var game = {};
 game.bankroll = 100;
 game.betSize = 10;
 game.deck = [];
-game.playersHand = [];
-game.dealersHand = [];
+game.playersHand = null;
+game.dealersHand = null;
 game.valueOfPlayersHand = 0;
 game.valueOfDealersHand = 0;
 
@@ -60,9 +60,6 @@ function dealInitialCards() {
   console.log(game.playersHand);
   console.log(game.dealersHand);
   console.log("Initial cards were dealt.");
-
-  calculateValue(game.playersHand);
-  calculateValue(game.dealersHand);
 };
 
 function calculateValue(hand) {
@@ -84,10 +81,10 @@ function calculateValue(hand) {
       game.valueOfDealersHand += 10;
     };
 
-    console.log("Dealer has now: " + game.valueOfDealersHand);
+    console.log("Dealer shows: " + game.valueOfDealersHand);
     return game.valueOfDealersHand;
 
-  } else {
+  } else if (hand == game.playersHand) {
 
     game.valueOfPlayersHand = 0;
 
@@ -119,7 +116,7 @@ function calculateValue(hand) {
       console.log("Player shows: " + game.valueOfPlayersHand);
 
       return game.valueOfPlayersHand;
-      dealersTurn();
+      //dealersTurn();
     };
 
     // announce "busted"
@@ -132,11 +129,13 @@ function calculateValue(hand) {
       return "busted";
     };
 
-    // announce all other game.valueOfPlayersHandues
+    // announce all other game.valueOfPlayersHands
     if (game.valueOfPlayersHand < 21) {
       console.log("Player shows: " + game.valueOfPlayersHand);
       return game.valueOfPlayersHand;
     };
+  } else {
+    console.log("how can there be another hand?");
   };
 };
 
@@ -253,7 +252,7 @@ function checkDeckSize() {
   };
 
   if(general.positionOfCutcard != null){
-    if (game.deck.length == 0 || game.deck.length < 20) {
+    if (game.deck.length == 0 || game.deck.length < general.positionOfCutcard) {
 
       shuffleNewDeck();
       console.log("Number of cards in the current deck: " + game.deck.length);
@@ -268,12 +267,10 @@ function checkDeckSize() {
   };
 };
 
-function startNewGame () {
-  checkDeckSize();
-  placeBet(10);
-  dealInitialCards();
-  //gameLogic();
-}
+function playAccordingToStrategy(){
+  console.log(game.valueOfPlayersHand);
+  console.log(game.valueOfDealersHand);
+};
 
 function simulateTheGame () {
 
@@ -283,7 +280,10 @@ function simulateTheGame () {
     
     checkDeckSize();
     placeBet(10);
-
+    dealInitialCards();
+    calculateValue(game.playersHand);
+    calculateValue(game.dealersHand);
+    playAccordingToStrategy();
   };
 }
 
