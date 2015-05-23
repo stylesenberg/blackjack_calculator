@@ -1,6 +1,6 @@
 /* global variables */
 var game = {};
-game.bankroll = 100;
+game.bankroll = 0;
 game.betSize = 10;
 game.deck = [];
 game.playersHand = null;
@@ -8,10 +8,35 @@ game.dealersHand = null;
 game.valueOfPlayersHand = 0;
 game.valueOfDealersHand = 0;
 
-/* create a function to shuffle an Array */
-function shuffle(o) {
-  for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-  return o;
+
+function simulateTheGame () {
+
+  for (var i = 0; i < simulation.count; i++) {
+
+    console.log("--- simulation # " + i);
+    
+    checkDeckSize();
+    placeBet(10);
+    dealInitialCards();
+    calculateValue(game.playersHand);
+    calculateValue(game.dealersHand);
+    playAccordingToStrategy();
+  };
+}
+
+/*
+* next step: 
+* create logic of playAccordingToStrategy();
+*
+*/
+
+function checkDeckSize() {
+  if (game.deck.length == 0 ) {
+    console.log("deck init.");
+    shuffleNewDeck();
+  } else if (game.deck.length < general.positionOfCutcard) {
+    shuffleNewDeck();
+  };
 };
 
 function shuffleNewDeck() {
@@ -25,28 +50,22 @@ function shuffleNewDeck() {
     };
 
     shuffle(game.deck);
-    console.log("A new deck of cards has been shuffled.");
-  } else {
-    console.log("ERROR: general.numberOfDecks == null")
+    console.log("new deck shuffled.");
   };
+};
+
+/* create a function to shuffle an Array */
+function shuffle(o) {
+  for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+  return o;
 };
 
 function placeBet(bet) {
   game.betSize = bet;
-
-  if (isNaN(game.betSize)) {
-    console.log("*--- Argument is NaN.");
-    return "Argument == NaN.";
-  } else {
-    console.log("*--- Bet is placed. Betsize is: " + game.betSize);
-    return "Everything is fine.";
-  };
 };
 
 function calculateBankroll(amount) {
   game.bankroll += amount;
-  console.log("New bankroll is: " + game.bankroll);
-  return game.bankroll;
 };
 
 function dealInitialCards() {
@@ -138,6 +157,13 @@ function calculateValue(hand) {
     console.log("how can there be another hand?");
   };
 };
+
+
+function playAccordingToStrategy(){
+  console.log(game.valueOfPlayersHand);
+  console.log(game.valueOfDealersHand);
+};
+
 
 function hit (hand) {
   if (hand == game.dealersHand) {
@@ -246,52 +272,11 @@ function compareHands () {
   };
 };
 
-function checkDeckSize() {
-  if (game.deck.length == 0) {
-    console.log("game init");
-  };
 
-  if(general.positionOfCutcard != null){
-    if (game.deck.length == 0 || game.deck.length < general.positionOfCutcard) {
 
-      shuffleNewDeck();
-      console.log("Number of cards in the current deck: " + game.deck.length);
-      return "new deck shuffled"
 
-    } else {
-      console.log("Number of cards in the current deck: " + game.deck.length);
-      return "deck is still dealable"
-  };
-  } else {
-    console.log("ERROR general.positionOfCutcard == null")
-  };
-};
 
-function playAccordingToStrategy(){
-  console.log(game.valueOfPlayersHand);
-  console.log(game.valueOfDealersHand);
-};
 
-function simulateTheGame () {
-
-  for (var i = 0; i < simulation.count; i++) {
-
-    console.log("--- simulation # " + i);
-    
-    checkDeckSize();
-    placeBet(10);
-    dealInitialCards();
-    calculateValue(game.playersHand);
-    calculateValue(game.dealersHand);
-    playAccordingToStrategy();
-  };
-}
-
-/*
-* next step: 
-* create logic of playAccordingToStrategy();
-*
-*/
 
 
 
