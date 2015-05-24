@@ -7,6 +7,8 @@ game.playersHand = null;
 game.dealersHand = null;
 game.valueOfPlayersHand = 0;
 game.valueOfDealersHand = 0;
+game.hardValue = 0;
+game.softValue = 0;
 
 
 function simulateTheGame () {
@@ -27,6 +29,8 @@ function simulateTheGame () {
 /*
 * next step: 
 * create logic of playAccordingToStrategy();
+*
+* determine weather HARD or SOFT hand-value
 *
 */
 
@@ -162,6 +166,50 @@ function calculateValue(hand) {
 function playAccordingToStrategy(){
   console.log(game.valueOfPlayersHand);
   console.log(game.valueOfDealersHand);
+
+  calculateHardValue(game.playersHand);
+  calculateSoftValue(game.playersHand);
+
+
+  if ( game.hardValue == game.softValue ) {
+    // play HARD strategy
+    console.log("HARD value.");
+  } else {
+    // play SOFT strategy
+    console.log("SOFT value.");
+  };
+
+};
+
+function calculateHardValue(hand) {
+
+  game.hardValue = 0;
+
+  for (var i = 0; i < hand.length; i++) {
+    if (hand[i] == "A") {
+      game.hardValue += 1;
+    } else {
+      game.hardValue += hand[i];
+    };
+  };
+};
+
+function calculateSoftValue(hand) {
+
+  game.softValue = 0;
+
+  for (var i = 0; i < hand.length; i++) {
+    if (hand[i] == "A") {
+      game.softValue += 1;
+    } else {
+      game.softValue += hand[i];
+    };
+  };
+
+    // calculate the Ace correctly
+  if ((game.softValue < 12) && (hand.indexOf("A") != -1)) {
+    game.softValue += 10;
+  };
 };
 
 
