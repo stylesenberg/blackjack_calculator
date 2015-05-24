@@ -174,11 +174,303 @@ function playAccordingToStrategy(){
   if ( game.hardValue == game.softValue ) {
     // play HARD strategy
     console.log("HARD value.");
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 2) { play(strategy.hard_5_2); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 3) { play(strategy.hard_5_3); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 4) { play(strategy.hard_5_4); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 5) { play(strategy.hard_5_5); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 6) { play(strategy.hard_5_6); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 7) { play(strategy.hard_5_7); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 8) { play(strategy.hard_5_8); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 9) { play(strategy.hard_5_9); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 10) { play(strategy.hard_5_T); };
+    if (game.valueOfPlayersHand == 5 && game.valueOfDealersHand == 11) { play(strategy.hard_5_A); };
+
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 2) { play(strategy.hard_6_2); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 3) { play(strategy.hard_6_3); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 4) { play(strategy.hard_6_4); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 5) { play(strategy.hard_6_5); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 6) { play(strategy.hard_6_6); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 7) { play(strategy.hard_6_7); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 8) { play(strategy.hard_6_8); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 9) { play(strategy.hard_6_9); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 10) { play(strategy.hard_6_T); };
+    if (game.valueOfPlayersHand == 6 && game.valueOfDealersHand == 11) { play(strategy.hard_6_A); };
+
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 2) { play(strategy.hard_7_2); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 3) { play(strategy.hard_7_3); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 4) { play(strategy.hard_7_4); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 5) { play(strategy.hard_7_5); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 6) { play(strategy.hard_7_6); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 7) { play(strategy.hard_7_7); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 8) { play(strategy.hard_7_8); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 9) { play(strategy.hard_7_9); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 10) { play(strategy.hard_7_T); };
+    if (game.valueOfPlayersHand == 7 && game.valueOfDealersHand == 11) { play(strategy.hard_7_A); };
+
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 2) { play(strategy.hard_8_2); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 3) { play(strategy.hard_8_3); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 4) { play(strategy.hard_8_4); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 5) { play(strategy.hard_8_5); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 6) { play(strategy.hard_8_6); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 7) { play(strategy.hard_8_7); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 8) { play(strategy.hard_8_8); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 9) { play(strategy.hard_8_9); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 10) { play(strategy.hard_8_T); };
+    if (game.valueOfPlayersHand == 8 && game.valueOfDealersHand == 11) { play(strategy.hard_8_A); };
+
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 2) { play(strategy.hard_9_2); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 3) { play(strategy.hard_9_3); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 4) { play(strategy.hard_9_4); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 5) { play(strategy.hard_9_5); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 6) { play(strategy.hard_9_6); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 7) { play(strategy.hard_9_7); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 8) { play(strategy.hard_9_8); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 9) { play(strategy.hard_9_9); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 10) { play(strategy.hard_9_T); };
+    if (game.valueOfPlayersHand == 9 && game.valueOfDealersHand == 11) { play(strategy.hard_9_A); };
+
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 2) { play(strategy.hard_10_2); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 3) { play(strategy.hard_10_3); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 4) { play(strategy.hard_10_4); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 5) { play(strategy.hard_10_5); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 6) { play(strategy.hard_10_6); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 7) { play(strategy.hard_10_7); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 8) { play(strategy.hard_10_8); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 9) { play(strategy.hard_10_9); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 10) { play(strategy.hard_10_T); };
+    if (game.valueOfPlayersHand == 10 && game.valueOfDealersHand == 11) { play(strategy.hard_10_A); };
+
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 2) { play(strategy.hard_11_2); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 3) { play(strategy.hard_11_3); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 4) { play(strategy.hard_11_4); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 5) { play(strategy.hard_11_5); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 6) { play(strategy.hard_11_6); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 7) { play(strategy.hard_11_7); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 8) { play(strategy.hard_11_8); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 9) { play(strategy.hard_11_9); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 10) { play(strategy.hard_11_T); };
+    if (game.valueOfPlayersHand == 11 && game.valueOfDealersHand == 11) { play(strategy.hard_11_A); };
+
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 2) { play(strategy.hard_12_2); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 3) { play(strategy.hard_12_3); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 4) { play(strategy.hard_12_4); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 5) { play(strategy.hard_12_5); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 6) { play(strategy.hard_12_6); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 7) { play(strategy.hard_12_7); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 8) { play(strategy.hard_12_8); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 9) { play(strategy.hard_12_9); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 10) { play(strategy.hard_12_T); };
+    if (game.valueOfPlayersHand == 12 && game.valueOfDealersHand == 11) { play(strategy.hard_12_A); };
+
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 2) { play(strategy.hard_13_2); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 3) { play(strategy.hard_13_3); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 4) { play(strategy.hard_13_4); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 5) { play(strategy.hard_13_5); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 6) { play(strategy.hard_13_6); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 7) { play(strategy.hard_13_7); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 8) { play(strategy.hard_13_8); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 9) { play(strategy.hard_13_9); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 10) { play(strategy.hard_13_T); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 11) { play(strategy.hard_13_A); };
+
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 2) { play(strategy.hard_14_2); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 3) { play(strategy.hard_14_3); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 4) { play(strategy.hard_14_4); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 5) { play(strategy.hard_14_5); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 6) { play(strategy.hard_14_6); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 7) { play(strategy.hard_14_7); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 8) { play(strategy.hard_14_8); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 9) { play(strategy.hard_14_9); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 10) { play(strategy.hard_14_T); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 11) { play(strategy.hard_14_A); };
+
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 2) { play(strategy.hard_15_2); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 3) { play(strategy.hard_15_3); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 4) { play(strategy.hard_15_4); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 5) { play(strategy.hard_15_5); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 6) { play(strategy.hard_15_6); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 7) { play(strategy.hard_15_7); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 8) { play(strategy.hard_15_8); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 9) { play(strategy.hard_15_9); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 10) { play(strategy.hard_15_T); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 11) { play(strategy.hard_15_A); };
+
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 2) { play(strategy.hard_16_2); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 3) { play(strategy.hard_16_3); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 4) { play(strategy.hard_16_4); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 5) { play(strategy.hard_16_5); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 6) { play(strategy.hard_16_6); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 7) { play(strategy.hard_16_7); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 8) { play(strategy.hard_16_8); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 9) { play(strategy.hard_16_9); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 10) { play(strategy.hard_16_T); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 11) { play(strategy.hard_16_A); };
+
+
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 2) { play(strategy.hard_17_2); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 3) { play(strategy.hard_17_3); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 4) { play(strategy.hard_17_4); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 5) { play(strategy.hard_17_5); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 6) { play(strategy.hard_17_6); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 7) { play(strategy.hard_17_7); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 8) { play(strategy.hard_17_8); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 9) { play(strategy.hard_17_9); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 10) { play(strategy.hard_17_T); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 11) { play(strategy.hard_17_A); };
+
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 2) { play(strategy.hard_18_2); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 3) { play(strategy.hard_18_3); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 4) { play(strategy.hard_18_4); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 5) { play(strategy.hard_18_5); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 6) { play(strategy.hard_18_6); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 7) { play(strategy.hard_18_7); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 8) { play(strategy.hard_18_8); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 9) { play(strategy.hard_18_9); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 10) { play(strategy.hard_18_T); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 11) { play(strategy.hard_18_A); };
+
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 2) { play(strategy.hard_19_2); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 3) { play(strategy.hard_19_3); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 4) { play(strategy.hard_19_4); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 5) { play(strategy.hard_19_5); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 6) { play(strategy.hard_19_6); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 7) { play(strategy.hard_19_7); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 8) { play(strategy.hard_19_8); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 9) { play(strategy.hard_19_9); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 10) { play(strategy.hard_19_T); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 11) { play(strategy.hard_19_A); };
+
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 2) { play(strategy.hard_20_2); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 3) { play(strategy.hard_20_3); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 4) { play(strategy.hard_20_4); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 5) { play(strategy.hard_20_5); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 6) { play(strategy.hard_20_6); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 7) { play(strategy.hard_20_7); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 8) { play(strategy.hard_20_8); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 9) { play(strategy.hard_20_9); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 10) { play(strategy.hard_20_T); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 11) { play(strategy.hard_20_A); };
+
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 2) { play(strategy.hard_21_2); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 3) { play(strategy.hard_21_3); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 4) { play(strategy.hard_21_4); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 5) { play(strategy.hard_21_5); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 6) { play(strategy.hard_21_6); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 7) { play(strategy.hard_21_7); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 8) { play(strategy.hard_21_8); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 9) { play(strategy.hard_21_9); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 10) { play(strategy.hard_21_T); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 11) { play(strategy.hard_21_A); };
+
   } else {
     // play SOFT strategy
     console.log("SOFT value.");
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 2) { play(strategy.soft_13_2); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 3) { play(strategy.soft_13_3); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 4) { play(strategy.soft_13_4); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 5) { play(strategy.soft_13_5); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 6) { play(strategy.soft_13_6); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 7) { play(strategy.soft_13_7); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 8) { play(strategy.soft_13_8); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 9) { play(strategy.soft_13_9); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 10) { play(strategy.soft_13_T); };
+    if (game.valueOfPlayersHand == 13 && game.valueOfDealersHand == 11) { play(strategy.soft_13_A); };
+
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 2) { play(strategy.soft_14_2); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 3) { play(strategy.soft_14_3); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 4) { play(strategy.soft_14_4); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 5) { play(strategy.soft_14_5); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 6) { play(strategy.soft_14_6); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 7) { play(strategy.soft_14_7); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 8) { play(strategy.soft_14_8); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 9) { play(strategy.soft_14_9); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 10) { play(strategy.soft_14_T); };
+    if (game.valueOfPlayersHand == 14 && game.valueOfDealersHand == 11) { play(strategy.soft_14_A); };
+
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 2) { play(strategy.soft_15_2); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 3) { play(strategy.soft_15_3); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 4) { play(strategy.soft_15_4); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 5) { play(strategy.soft_15_5); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 6) { play(strategy.soft_15_6); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 7) { play(strategy.soft_15_7); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 8) { play(strategy.soft_15_8); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 9) { play(strategy.soft_15_9); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 10) { play(strategy.soft_15_T); };
+    if (game.valueOfPlayersHand == 15 && game.valueOfDealersHand == 11) { play(strategy.soft_15_A); };
+
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 2) { play(strategy.soft_16_2); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 3) { play(strategy.soft_16_3); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 4) { play(strategy.soft_16_4); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 5) { play(strategy.soft_16_5); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 6) { play(strategy.soft_16_6); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 7) { play(strategy.soft_16_7); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 8) { play(strategy.soft_16_8); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 9) { play(strategy.soft_16_9); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 10) { play(strategy.soft_16_T); };
+    if (game.valueOfPlayersHand == 16 && game.valueOfDealersHand == 11) { play(strategy.soft_16_A); };
+
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 2) { play(strategy.soft_17_2); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 3) { play(strategy.soft_17_3); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 4) { play(strategy.soft_17_4); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 5) { play(strategy.soft_17_5); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 6) { play(strategy.soft_17_6); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 7) { play(strategy.soft_17_7); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 8) { play(strategy.soft_17_8); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 9) { play(strategy.soft_17_9); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 10) { play(strategy.soft_17_T); };
+    if (game.valueOfPlayersHand == 17 && game.valueOfDealersHand == 11) { play(strategy.soft_17_A); };
+
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 2) { play(strategy.soft_18_2); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 3) { play(strategy.soft_18_3); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 4) { play(strategy.soft_18_4); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 5) { play(strategy.soft_18_5); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 6) { play(strategy.soft_18_6); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 7) { play(strategy.soft_18_7); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 8) { play(strategy.soft_18_8); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 9) { play(strategy.soft_18_9); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 10) { play(strategy.soft_18_T); };
+    if (game.valueOfPlayersHand == 18 && game.valueOfDealersHand == 11) { play(strategy.soft_18_A); };
+
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 2) { play(strategy.soft_19_2); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 3) { play(strategy.soft_19_3); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 4) { play(strategy.soft_19_4); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 5) { play(strategy.soft_19_5); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 6) { play(strategy.soft_19_6); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 7) { play(strategy.soft_19_7); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 8) { play(strategy.soft_19_8); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 9) { play(strategy.soft_19_9); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 10) { play(strategy.soft_19_T); };
+    if (game.valueOfPlayersHand == 19 && game.valueOfDealersHand == 11) { play(strategy.soft_19_A); };
+
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 2) { play(strategy.soft_20_2); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 3) { play(strategy.soft_20_3); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 4) { play(strategy.soft_20_4); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 5) { play(strategy.soft_20_5); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 6) { play(strategy.soft_20_6); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 7) { play(strategy.soft_20_7); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 8) { play(strategy.soft_20_8); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 9) { play(strategy.soft_20_9); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 10) { play(strategy.soft_20_T); };
+    if (game.valueOfPlayersHand == 20 && game.valueOfDealersHand == 11) { play(strategy.soft_20_A); };
+
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 2) { play(strategy.soft_21_2); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 3) { play(strategy.soft_21_3); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 4) { play(strategy.soft_21_4); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 5) { play(strategy.soft_21_5); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 6) { play(strategy.soft_21_6); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 7) { play(strategy.soft_21_7); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 8) { play(strategy.soft_21_8); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 9) { play(strategy.soft_21_9); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 10) { play(strategy.soft_21_T); };
+    if (game.valueOfPlayersHand == 21 && game.valueOfDealersHand == 11) { play(strategy.soft_21_A); };
+
   };
 
+};
+
+function play(letter) {
+  if (letter == "H") { hit(game.playersHand) };
+  if (letter = "S") { dealersTurn() };
 };
 
 function calculateHardValue(hand) {
