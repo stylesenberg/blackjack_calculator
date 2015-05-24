@@ -9,6 +9,8 @@ game.valueOfPlayersHand = 0;
 game.valueOfDealersHand = 0;
 game.hardValue = 0;
 game.softValue = 0;
+game.arr_results = [];
+game.arr_labels = [];
 
 
 function simulateTheGame () {
@@ -24,13 +26,15 @@ function simulateTheGame () {
     calculateValue(game.dealersHand);
     playAccordingToStrategy();
   };
+
+  alert("simulation ended successfully.")
 }
 
 /*
 * next step: 
 * create logic of playAccordingToStrategy();
 *
-* determine weather HARD or SOFT hand-value
+* calculate bankroll
 *
 */
 
@@ -70,6 +74,10 @@ function placeBet(bet) {
 
 function calculateBankroll(amount) {
   game.bankroll += amount;
+  console.log("current bankroll: " + game.bankroll);
+
+  game.arr_results.push(game.bankroll);
+  game.arr_labels.push(amount);
 };
 
 function dealInitialCards() {

@@ -48,8 +48,15 @@ header h1 {
 }
 
 #start-simulation {
+	float: left;
+}
+
+#draw-chart {
 	float: right;
-	margin-bottom: 60px;
+}
+
+.after-buttons {
+	margin-top: 160px;
 }
 
 .panel-heading p.player {
