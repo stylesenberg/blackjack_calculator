@@ -70,6 +70,7 @@ function shuffle(o) {
 
 function placeBet(bet) {
   game.betSize = bet;
+  console.log("placeBet()");
 };
 
 function calculateBankroll(amount) {
@@ -172,9 +173,6 @@ function calculateValue(hand) {
 
 
 function playAccordingToStrategy(){
-  console.log(game.valueOfPlayersHand);
-  console.log(game.valueOfDealersHand);
-
   calculateHardValue(game.playersHand);
   calculateSoftValue(game.playersHand);
 
@@ -518,6 +516,7 @@ function hit (hand) {
 
     var the_new_card = game.deck.pop();
     game.dealersHand.push(the_new_card);
+    console.log("Dealer hits");
     console.log("Dealer was dealt a " + the_new_card);
     calculateValue(game.dealersHand);
     return "dealersHand was destinguished successfully.";
@@ -527,12 +526,15 @@ function hit (hand) {
     if (game.valueOfPlayersHand == 21) {
       console.log("Player has already enough. ;-)");
       return "playersHand is already 21.";
+      playAccordingToStrategy();
 
     } else {
       var the_new_card = game.deck.pop();
       game.playersHand.push(the_new_card);
+      console.log("Player hits");
       console.log("Player was dealt a " + the_new_card);
       calculateValue(game.playersHand);
+      playAccordingToStrategy();
     };
 
     return "playersHand was destinguished successfully.";
@@ -562,6 +564,7 @@ function double (hand) {
 };
 
 function dealersTurn() {
+  console.log("Player stands ... ");
   console.log("Dealer's turn starts ... ");
   console.log("Dealer currently stands at " + game.valueOfDealersHand);
 
