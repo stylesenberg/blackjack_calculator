@@ -10,10 +10,9 @@ $("#start-simulation").click(function(){
 });
 
 // global variables
-
-var general = {};
-general.numberOfDecks = null;
-general.positionOfCutcard = null;
+var global = {};
+global.numberOfDecks = null;
+global.positionOfCutcard = null;
 
 var simulation = {};
 simulation.count = null;
@@ -25,7 +24,7 @@ function assignNumberOfDecks () {
 	var nod = $("#number-of-decks option:selected");
 
 	if (nod != null) {
-		general.numberOfDecks = Number(nod.val());
+		global.numberOfDecks = Number(nod.val());
 	} else {
 		alert("Please select the number of decks in the dealing box.");
 	}
@@ -35,7 +34,7 @@ function assignPositionOfCutcard () {
 	var poc = $("#position-of-cutcard option:selected");
 
 	if (poc != null) {
-		general.positionOfCutcard = Number(poc.val());
+		global.positionOfCutcard = Number(poc.val());
 	} else {
 		alert("Please select the position of the cutcard in the dealing box.");
 	};
@@ -383,7 +382,7 @@ var frontend = {
 		 * according to the selected letter.
 		 */
 		var btn = $(".btn-group.open > button");
-		
+
 		// removes the old bootstrap class from the button
 		btn.removeClass("btn-default");
 		btn.removeClass("btn-warning");

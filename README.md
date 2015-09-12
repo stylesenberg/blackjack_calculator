@@ -26,18 +26,18 @@ Programming logic of the application:
 2. deal initial cards to player and dealer,
 
 3. review the player's hand:
-   a. current hand is blackjack?
-   b. current hand should split (according to strategy)?
-   c. current hand should double (...)?
-   d. current hand should hit (...)?
-   e. current hand should stay (...)?
+3. a. current hand is blackjack?
+3. b. current hand should split (according to strategy)?
+3. c. current hand should double (...)?
+3. d. current hand should hit (...)?
+3. e. current hand should stay (...)?
 
 4. data structure:
-   a. dealersHand = e.g. [[3,4,"T"]];
-   b. player_activeHands = e.g. [[3,4], ["T",5], ...]; //not even played
-   c. player_lostHands = e.g. [["T",4,"T"], [5,5,2,"T"], ...]; //score too high
-   d. player_wonHands = e.g. [["T","A"], ["A","T"], ...]; //blackjack always wins
-   e. player_finishedHands = e.g. [["T",5,3], ["T","T"], [4,5,5], ...]; //already played and waiting for dealersHand
+4. a. dealersHand = e.g. [[3,4,"T"]];
+4. b. player_activeHands = e.g. [[3,4], ["T",5], ...]; //not even played
+4. c. player_lostHands = e.g. [["T",4,"T"], [5,5,2,"T"], ...]; //score too high
+4. d. player_wonHands = e.g. [["T","A"], ["A","T"], ...]; //blackjack always wins
+4. e. player_finishedHands = e.g. [["T",5,3], ["T","T"], [4,5,5], ...]; //already played and waiting for dealersHand
 
 Per default all player's hands are in the player_activeHands.
 After the next card is dealt, the player's (currently playing) hand will be reviewed and (if necessary) re-ordered into another category (player_lostHands or player_finishedHands).

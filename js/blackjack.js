@@ -18,7 +18,7 @@ function simulateTheGame () {
   for (var i = 0; i < simulation.count; i++) {
 
     console.log("--- simulation # " + i);
-    
+
     checkDeckSize();
     placeBet(10);
     dealInitialCards();
@@ -31,7 +31,7 @@ function simulateTheGame () {
 }
 
 /*
-* next step: 
+* next step:
 * create logic of playAccordingToStrategy();
 *
 * calculate bankroll
@@ -42,7 +42,7 @@ function checkDeckSize() {
   if (game.deck.length == 0 ) {
     console.log("deck init.");
     shuffleNewDeck();
-  } else if (game.deck.length < general.positionOfCutcard) {
+  } else if (game.deck.length < global.positionOfCutcard) {
     shuffleNewDeck();
   };
 };
@@ -50,8 +50,8 @@ function checkDeckSize() {
 function shuffleNewDeck() {
   game.deck = [];
 
-  if (general.numberOfDecks != null) {
-    for (var deck = 0; deck < general.numberOfDecks; deck++) {
+  if (global.numberOfDecks != null) {
+    for (var deck = 0; deck < global.numberOfDecks; deck++) {
       for (var suit = 0; suit < 4; suit++) {
         game.deck.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, "A");
       };
@@ -622,14 +622,3 @@ function compareHands () {
     return "dealer busts"
   };
 };
-
-
-
-
-
-
-
-
-
-
-
